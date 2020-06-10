@@ -1,12 +1,6 @@
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Header from './src/components/Header';
@@ -20,34 +14,10 @@ import {createStackNavigator} from '@react-navigation/stack'
 import {NavigationContainer} from '@react-navigation/native'
 
 const store = createStore(mainReducer, compose(applyMiddleware(thunk)));
-// const Stack = createStackNavigation();
 const Stack = createStackNavigator();
 
 const App = ()  => {
   return (
-    // <>
-    //   <StatusBar barStyle="dark-content" />
-    //   <SafeAreaView>
-    //     <ScrollView
-    //       contentInsetAdjustmentBehavior="automatic"
-    //       style={styles.scrollView}>
-    //       <Header />
-    //       <View style={styles.body}>
-    //         <Provider store={store}>
-    //           <Gallery style={styles.container}/>
-    //         </Provider>
-    //       </View>
-    //     </ScrollView>
-    //   </SafeAreaView>
-    // </>
-    
-    // <Provider store={store}>
-    //   <Header/>
-    //   <View style={styles.container}>
-    //     <Gallery/>
-    //   </View>
-    // </Provider>
-
     <Provider store={store}>
       <Header/>
       <NavigationContainer>

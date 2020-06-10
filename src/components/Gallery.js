@@ -11,14 +11,14 @@ const Gallery = ({navigation}) => {
     const images = useSelector(state => state.imgReducer.images);
     const loading = useSelector(state => state.appReducer.loading);
   
-    useEffect(() => dispatch(getImagesFromServer()), [dispatch]);
+    // useEffect(() => dispatch(getImagesFromServer()), [dispatch]);
 
     if(loading){
         return (<ActivityIndicator size="large" color="#0000ff" />);
     }
 
     if(!images.length){
-        return <Button title="Update" onPress={() => dispatch(getImagesFromServer())}/>
+        return <Button title="Get content" onPress={() => dispatch(getImagesFromServer())}/>
     }
 
     return (
